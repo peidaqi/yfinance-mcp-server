@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "yfinance_mcp_server"
+version = "0.1.0"
+description = "Provides a set of tools to interact with Yahoo Finance API through yfinance to retrieve stock market data."
+authors = [
+  { name = "Daqi Pei", email = "peidaqi@gmail.com" }
+]
+dependencies = [
+    "fastmcp>=2.9.0",
+    "yfinance>=0.2.63"
+]
