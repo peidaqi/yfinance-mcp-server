@@ -1,5 +1,7 @@
 import yfinance as yf
 from fastmcp import FastMCP
+import argparse
+import asyncio
 
 mcp = FastMCP(name="yfiannce MCP Server",
             instructions="Provides a set of tools to interact with Yahoo Finance API through yfinance to retrieve stock market data.",
@@ -167,4 +169,11 @@ def get_option_chain(ticker: str, expiration: str) -> dict:
     }
 
 
+
+
+parser = argparse.ArgumentParser(
+    description="Provides a set of tools to interact with Yahoo Finance API through yfinance to retrieve stock market data."
+)
+
+args = parser.parse_args()
 mcp.run()  # Default: uses STDIO transport
