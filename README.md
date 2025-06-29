@@ -9,13 +9,21 @@ This project provides a simple implementation that allows LLM to interact with Y
 
 The server uses [fastmcp](https://github.com/jlowin/fastmcp) and runs within a Docker container to ensure portability.
 
-## Install and Run ##
+## Installation ##
 
-- Install package:
+- Using python & pip:
 ```
 pip install .
 ```
-- Add this item in MCP settings:
+- Alternative - using Docker:
+```
+docker build -t yfinance-mcp-server .
+```
+
+
+## Configuration ##
+
+- If installed using python & pip, add this item in MCP settings:
 ```
 "mcpServers": {
     "YahooFinanceServer": {
@@ -26,14 +34,7 @@ pip install .
 
 ```
 
-## Alternative - Build and Run using Docker ##
-
-The preferred way is to use Docker so you don't run into dependency issues.
-- To build the container:
-```
-docker build -t yfinance-mcp-server .
-```
-- Add this item in MCP settings:
+- If installed using Docker, add this item in MCP settings:
 ```
 "mcpServers": {
     "YahooFinanceServer": {
@@ -43,8 +44,9 @@ docker build -t yfinance-mcp-server .
   }
 ```
 
+## Example ##
 
-In your LLM interface, you can ask something like:
+In your LLM interface, e.g. Cline, you can ask something like:
 ```
 What is MSFT's stock price on Jan 1, 2025?
 ```
